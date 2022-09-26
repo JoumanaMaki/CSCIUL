@@ -1,0 +1,29 @@
+{
+  "name": "csiul",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --experimental-specifier-resolution=node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoumanaMaki/CSCIUL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoumanaMaki/CSCIUL/issues"
+  },
+  "homepage": "https://github.com/JoumanaMaki/CSCIUL#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7",
+    "socket.io": "^4.5.2",
+    "start": "^5.1.0"
+  }
+}

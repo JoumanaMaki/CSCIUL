@@ -1,11 +1,11 @@
 import User from "../models/users.js"
 import bcrypt from "bcryptjs";
-
+import multer from "multer"
 import path from "path";
-
+import { createToken } from "../utils/token.js";
 //create an account
 export const signup = async (req, res)=>{
-    const { name, email, gender, password, phone, birthday, university, major, degree, level } = req.body;
+    const { name, email, gender, password, phone, birthday,  major, degree, level } = req.body;
     try {
         const users = await User.find({ email: email })
         if (users.length == 0) {
@@ -35,7 +35,8 @@ export const signup = async (req, res)=>{
 
 //log in
 export const login = async(req, res)=>{
-    const { email, password } = req.body;
+    const email = req.body.email;
+    const password = req.body.password;
   try {
     var user = null;
     // check if the user exists
@@ -53,7 +54,6 @@ export const login = async(req, res)=>{
     //generate a token to the user
     const token = await createToken({ id: user._id, role: user.role });
    
-
     //return user info and the token
     return res.status(200).json({
       result: {

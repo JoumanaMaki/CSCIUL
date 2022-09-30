@@ -6,6 +6,9 @@ import http from "http";
 import dotenv from "dotenv"
 
 
+// Routes
+import UserRoutes from "./routes/user.js"
+
 // models
 
 import Users from "./models/users.js"
@@ -20,7 +23,7 @@ const app = express();
 
 app.use(express.static("uploads"));
 
-
+app.use("/user",UserRoutes)
 
 
 

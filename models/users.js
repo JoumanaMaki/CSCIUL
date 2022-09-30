@@ -8,15 +8,15 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required: true
     },
+   
+    password:{
+        type:String,
+        required:true
+    },  
     gender:{
         type:String,
         enum: ['male', 'female', 'other'],
     },
-    password:{
-        type:String,
-        required:true
-    }, 
-
     phone:{
         type: String,
     },
@@ -27,9 +27,6 @@ const UserSchema = new mongoose.Schema({
     birthday:{
         type: Date,
     },
-    university:{
-        type:String
-    },
     major:{
         type:String
     },
@@ -38,7 +35,15 @@ const UserSchema = new mongoose.Schema({
     },
     level:{
         type:String
-    }
+    },
+    workshops_id:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"User"
+    }],
+    events_id:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Events"
+    }]
 
 
 })
